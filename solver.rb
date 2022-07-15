@@ -1,37 +1,27 @@
+# solver.rb
+# frozen_string_literal: true
+
+# Class to solve some simple problems
 class Solver
+  def factorial(num)
+    raise 'param is negative!' if n.negative?
 
-    def factorial(n)
-        if n < 0
-            raise "param is negative!"
-        end
+    return 1 if num.zero?
 
-        if (n == 0)
-            return 1
-        end
+    num * factorial(num - 1)
+  end
 
-        return n * factorial(n - 1)
-    end
+  def reverse(str)
+    str.reverse
+  end
 
+  def fizzbuzz(num)
+    return 'fizzbuzz' if (num % 3).zero? && (num % 5).zero?
 
-    def reverse(str)
-        str.reverse
-    end
+    return 'fizz' if (num % 3).zero?
 
-    def fizzbuzz(n)
-        if (n % 3 == 0) && (n % 5 == 0)
-           return "fizzbuzz"
-        end
+    return 'buzz' if (num % 5).zero?
 
-        if n % 3 == 0
-           return "fizz"
-        end
-
-        if n % 5 == 0
-            return "buzz"
-        end
-
-        return n
-        
-    end
-
+    num
+  end
 end
